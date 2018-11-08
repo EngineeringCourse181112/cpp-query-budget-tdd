@@ -1,3 +1,3 @@
 #include "Budget.h"
 
-Budget::Budget(unsigned int year, unsigned int month, unsigned int amount) : year(year), month(month), amount(amount) {}
+Budget::Budget(unsigned int aYear, unsigned int aMonth, unsigned int amount) : yearMonth(year_month(year(aYear), month(aMonth))), amount(amount) {}
