@@ -1,4 +1,4 @@
-set(Main_SRCS main.cpp date.h BudgetDao.h Budget.cpp Budget.h)
+set(Main_SRCS main.cpp date.h BudgetDao.h Budget.cpp Budget.h BudgetQuery.cpp BudgetQuery.h)
 
 add_library(core ${Main_SRCS})
 add_executable(${CMAKE_PROJECT_NAME} main.cpp)

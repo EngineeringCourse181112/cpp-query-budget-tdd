@@ -11,6 +11,7 @@ public:
     Budget(unsigned int aYear, unsigned int aMonth, unsigned int amount);
     year_month yearMonth;
     unsigned int amount;
+    year_month_day getFirstDay() const;
 };
 
 
