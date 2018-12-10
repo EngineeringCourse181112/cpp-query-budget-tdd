@@ -14,7 +14,7 @@ public:
     unsigned int amount;
     year_month_day getFirstDay() const;
     year_month_day_last getLastDay() const;
-    Period getPeriod() const;
+    const Period period;
 };
 
 

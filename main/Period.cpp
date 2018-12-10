@@ -7,3 +7,8 @@ Period::Period(const year_month_day start, const year_month_day end) : start(sta
 int Period::getDayCount() const {
    return ((sys_days{end} - sys_days{start}).count() + 1);
 }
+
+int Period::getOverlappingDayCount(const Period &another) const {
+   return (sys_days{another.end} - sys_days{start}).count() + 1;
+}
+
