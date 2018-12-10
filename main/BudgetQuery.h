@@ -3,6 +3,8 @@
 
 #include "date.h"
 #include "BudgetDao.h"
+#include "Period.h"
+
 using namespace date;
 class BudgetQuery {
 public:
@@ -13,6 +15,8 @@ private:
     BudgetDao&   budgetDao;
 
     year_month_day_last getLastDay(const Budget &budget) const;
+
+    int getTotal(const Period &period) const;
 };
 
 
