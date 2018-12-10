@@ -15,12 +15,16 @@ int BudgetQuery::getTotal(const Period &period) const {
         return 0;
 
     if (period.end > budget.getLastDay())
-        return 10 * ((sys_days{budget.getLastDay()} - sys_days{period.start}).count() + 1);
+        return getOverlappingDayCount(period, budget.getPeriod());
 
     if (budget.getFirstDay() > period.start)
         return 10 * ((sys_days{period.end} - sys_days{budget.getFirstDay()}).count() + 1);
 
     return 10 * period.getDayCount();
+}
+
+int BudgetQuery::getOverlappingDayCount(const Period &period, const Period &another) const {
+    return 10 * ((sys_days{another.end} - sys_days{period.start}).count() + 1);
 }
 
 BudgetQuery::BudgetQuery(BudgetDao &_budgetDao) : budgetDao(_budgetDao) {}

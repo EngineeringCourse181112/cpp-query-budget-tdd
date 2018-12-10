@@ -2,6 +2,7 @@
 #define CPP_OTP_BUDGET_H
 
 #include "date.h"
+#include "Period.h"
 
 using namespace date;
 
@@ -13,6 +14,7 @@ public:
     unsigned int amount;
     year_month_day getFirstDay() const;
     year_month_day_last getLastDay() const;
+    Period getPeriod() const;
 };
 
 
