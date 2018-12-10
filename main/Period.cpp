@@ -9,6 +9,7 @@ int Period::getDayCount() const {
 }
 
 int Period::getOverlappingDayCount(const Period &another) const {
-   return (sys_days{another.end} - sys_days{start}).count() + 1;
+   auto overlappingEnd = end < another.end ? end : another.end;
+   return (sys_days{overlappingEnd} - sys_days{start}).count() + 1;
 }
 
