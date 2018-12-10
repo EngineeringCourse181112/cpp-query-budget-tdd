@@ -11,6 +11,7 @@ public:
     year_month_day start;
     year_month_day end;
     Period(year_month_day start, year_month_day end);
+    int getDayCount() const;
 
 };
 

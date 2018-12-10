@@ -20,7 +20,7 @@ int BudgetQuery::getTotal(const Period &period) const {
     if (budget.getFirstDay() > period.start)
         return 10 * ((sys_days{period.end} - sys_days{budget.getFirstDay()}).count() + 1);
 
-    return 10 * ((sys_days{period.end} - sys_days{period.start}).count() + 1);
+    return 10 * period.getDayCount();
 }
 
 BudgetQuery::BudgetQuery(BudgetDao &_budgetDao) : budgetDao(_budgetDao) {}

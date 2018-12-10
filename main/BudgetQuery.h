@@ -17,6 +17,8 @@ private:
     year_month_day_last getLastDay(const Budget &budget) const;
 
     int getTotal(const Period &period) const;
+
+    int getDayCount(const Period &period) const;
 };
 
 
