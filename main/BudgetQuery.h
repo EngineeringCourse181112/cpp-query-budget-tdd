@@ -13,16 +13,8 @@ public:
 
 private:
     BudgetDao&   budgetDao;
-
-    year_month_day_last getLastDay(const Budget &budget) const;
-
     int getTotal(const Period &period) const;
 
-    int getDayCount(const Period &period) const;
-
-    int getOverlappingDayCount(const Period &period, const Period &another) const;
-
-    int getOverlappingAmount(const Period &period, const Budget &budget) const;
 };
 
 

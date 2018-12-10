@@ -10,13 +10,15 @@ class Budget {
 
 public:
     Budget(unsigned int aYear, unsigned int aMonth, unsigned int amount);
+    int getOverlappingAmount(const Period &anotherPeriod) const;
+
+private:
     year_month yearMonth;
     unsigned int amount;
     year_month_day getFirstDay() const;
     year_month_day_last getLastDay() const;
     const Period period;
     int getDailyAmount() const;
-    int getOverlappingAmount(const Period &anotherPeriod) const;
 };
 
 
