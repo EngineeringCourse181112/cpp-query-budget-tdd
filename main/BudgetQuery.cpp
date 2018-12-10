@@ -18,7 +18,7 @@ int BudgetQuery::getTotal(const Period &period) const {
         return 10 * period.getOverlappingDayCount(budget.period);
 
     if (budget.getFirstDay() > period.start)
-        return 10 * ((sys_days{period.end} - sys_days{budget.getFirstDay()}).count() + 1);
+        return 10 * period.getOverlappingDayCount(budget.period);
 
     return 10 * period.getOverlappingDayCount(budget.period);
 }
