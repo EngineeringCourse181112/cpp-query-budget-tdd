@@ -11,15 +11,6 @@ int BudgetQuery::getTotal(const Period &period) const {
     }
 
     auto budget = budgetDao.findAll()[0];
-    if (period.end < budget.getFirstDay() || period.start > budget.getLastDay())
-        return 0;
-
-    if (period.end > budget.getLastDay())
-        return 10 * period.getOverlappingDayCount(budget.period);
-
-    if (budget.getFirstDay() > period.start)
-        return 10 * period.getOverlappingDayCount(budget.period);
-
     return 10 * period.getOverlappingDayCount(budget.period);
 }
 
