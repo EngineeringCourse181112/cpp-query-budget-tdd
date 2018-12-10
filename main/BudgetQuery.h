@@ -12,6 +12,7 @@ public:
 private:
     BudgetDao&   budgetDao;
 
+    year_month_day_last getLastDay(const Budget &budget) const;
 };
 
 

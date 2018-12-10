@@ -5,3 +5,7 @@ Budget::Budget(unsigned int aYear, unsigned int aMonth, unsigned int amount) : y
 year_month_day Budget::getFirstDay() const {
     return year_month_day(yearMonth.year(), yearMonth.month(), day(1));
 }
+
+year_month_day_last Budget::getLastDay() const {
+    return year_month_day_last(yearMonth.year(), month_day_last(yearMonth.month()));
+}

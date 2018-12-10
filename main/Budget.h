@@ -12,6 +12,7 @@ public:
     year_month yearMonth;
     unsigned int amount;
     year_month_day getFirstDay() const;
+    year_month_day_last getLastDay() const;
 };
 
 

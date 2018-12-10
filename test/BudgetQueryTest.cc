@@ -34,16 +34,23 @@ TEST_F(BudgetQueryTest, OneBudget) {
                                       year_month_day(year(2018), month(9), day(10))));
 }
 
-TEST_F(BudgetQueryTest, TwoBudgets) {
+TEST_F(BudgetQueryTest, StartAndEndBothInMonth) {
     givenBudget({Budget(2018,9,300)});
     
     ASSERT_EQ(20,budgetQuery.getTotal(year_month_day(year(2018), month(9), day(10)),
                                       year_month_day(year(2018), month(9), day(11))));
 }
 
-TEST_F(BudgetQueryTest, FinalDateInCurrentMonth) {
+TEST_F(BudgetQueryTest, EndInCurrentMonth) {
     givenBudget({Budget(2018,9,300)});
     
     ASSERT_EQ(110,budgetQuery.getTotal(year_month_day(year(2018), month(8), day(20)),
                                       year_month_day(year(2018), month(9), day(11))));
+}
+
+TEST_F(BudgetQueryTest, StartInCurrentMonth) {
+    givenBudget({Budget(2018,9,300)});
+
+    ASSERT_EQ(120,budgetQuery.getTotal(year_month_day(year(2018), month(9), day(19)),
+                                      year_month_day(year(2018), month(10), day(11))));
 }
