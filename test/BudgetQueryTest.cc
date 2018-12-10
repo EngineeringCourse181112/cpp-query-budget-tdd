@@ -61,5 +61,12 @@ TEST_F(BudgetQueryTest, EndBeforeFirstDayOfMonth) {
     givenBudget({Budget(2018, 9, 300)});
 
     ASSERT_EQ(0, budgetQuery.getTotal(year_month_day(year(2018), month(8), day(19)),
-                                        year_month_day(year(2018), month(8), day(25))));
+                                      year_month_day(year(2018), month(8), day(25))));
+}
+
+TEST_F(BudgetQueryTest, StartAfterLastDayOfMonth) {
+    givenBudget({Budget(2018, 9, 300)});
+
+    ASSERT_EQ(0, budgetQuery.getTotal(year_month_day(year(2018), month(10), day(19)),
+                                      year_month_day(year(2018), month(10), day(25))));
 }

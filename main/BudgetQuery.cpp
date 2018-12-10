@@ -6,7 +6,7 @@ int BudgetQuery::getTotal(year_month_day start, year_month_day end) {
     }
 
     auto budget = budgetDao.findAll()[0];
-    if (end < budget.getFirstDay())
+    if (end < budget.getFirstDay() || start > budget.getLastDay())
         return 0;
 
     if (end > budget.getLastDay())
