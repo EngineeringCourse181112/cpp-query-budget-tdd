@@ -15,6 +15,8 @@ public:
     year_month_day getFirstDay() const;
     year_month_day_last getLastDay() const;
     const Period period;
+    int getDailyAmount() const;
+    int getOverlappingAmount(const Period &anotherPeriod) const;
 };
 
 

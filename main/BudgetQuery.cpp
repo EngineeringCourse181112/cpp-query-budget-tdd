@@ -9,7 +9,7 @@ int BudgetQuery::getTotal(const Period &period) const {
     int total = 0;
 
     for (auto budget : budgetDao.findAll()) {
-        total += 10 * period.getOverlappingDayCount(budget.period);
+        total += budget.getOverlappingAmount(period);
     }
 
     return total;

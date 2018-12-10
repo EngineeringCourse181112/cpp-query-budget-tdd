@@ -21,6 +21,8 @@ private:
     int getDayCount(const Period &period) const;
 
     int getOverlappingDayCount(const Period &period, const Period &another) const;
+
+    int getOverlappingAmount(const Period &period, const Budget &budget) const;
 };
 
 
